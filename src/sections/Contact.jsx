@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from '../hooks/useInView';
+import { useInView } from './hooks/useInView';
 
 const Contact = () => {
   const [ref, isInView] = useInView({ threshold: 0.2 });
@@ -25,7 +25,7 @@ const Contact = () => {
   setIsSubmitting(true);
 
   try {
-    const response = await fetch("http://localhost:5000/api/contact", {
+    const response = await fetch("http://smartysols.onrender.com/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
