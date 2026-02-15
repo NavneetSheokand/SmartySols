@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useInView } from '../hooks/useInView';
+import { useInView } from '../hooks/useInview.js';
 
 const Services = () => {
   const [ref, isInView] = useInView({ threshold: 0.1 });

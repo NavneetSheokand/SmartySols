@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useInView, useCountUp } from '../hooks/useInView';
+import { useInView, useCountUp } from '../hooks/useInview.js';
 
 const Results = () => {
   const [ref, isInView] = useInView({ threshold: 0.3 });
