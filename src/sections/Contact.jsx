@@ -25,7 +25,7 @@ const Contact = () => {
   setIsSubmitting(true);
 
   try {
-    const response = await fetch("http://smartysols.onrender.com/api/health", {
+    const response = await fetch("https://smartysols.onrender.com/api/health", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
