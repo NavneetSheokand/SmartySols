@@ -43,7 +43,7 @@ app.post('/api/contact', async (req, res) => {
     // Confirmation Email to USER
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "nvntsheokand@gmail.com",
+      to: email,
       subject: "Thank you for contacting SmartySols!",
       html: `
         <h2>Hi ${name},</h2>
