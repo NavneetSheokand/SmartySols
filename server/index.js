@@ -1,11 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
-
+const { Resend } = require('resend');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Middleware
 app.use(cors({
@@ -19,14 +20,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Email configuration (mock setup - replace with actual credentials in production)
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
+await resend.emails.send({
+  from: 'onboarding@resend.dev', // temporary test domain
+  to: process.env.CONTACT_EMAIL,
+  subject: `New Contact Form Submission from ${name}`,
+  html: `<p><strong>Name:</strong> ${name}</p>
+         <p><strong>Email:</strong> ${email}</p>
+         <p><strong>Message:</strong> ${message}</p>`
+});
+
+await resend.emails.send({
+  from: 'onboarding@resend.dev',
+  to: email,
+  subject: 'Thank you for contacting SmartySols!',
+  html: `<p>Hi ${name},</p>
+         <p>We received your message and will respond soon.</p>`
 });
 
 
