@@ -41,7 +41,7 @@ app.post('/api/contact', async (req, res) => {
     });
 
     // Confirmation Email to USER
-    await resend.emails.send({
+    const result= await resend.emails.send({
       from: "contact@smartysols.xyz",
       to: email,
       subject: "Thank you for contacting SmartySols!",
