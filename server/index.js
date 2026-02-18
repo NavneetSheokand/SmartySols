@@ -28,7 +28,7 @@ app.post('/api/contact', async (req, res) => {
 
     // Email to YOU
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "contact@smartysols.xyz",
       to: process.env.CONTACT_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -42,7 +42,7 @@ app.post('/api/contact', async (req, res) => {
 
     // Confirmation Email to USER
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "contact@smartysols.xyz",
       to: email,
       subject: "Thank you for contacting SmartySols!",
       html: `
@@ -51,7 +51,8 @@ app.post('/api/contact', async (req, res) => {
         <p>Best Regards,<br/>Team SmartySols</p>
       `
     });
-
+      
+    console.log("Resend result:", result);
     res.status(200).json({
       success: true,
       message: "Message sent successfully"
