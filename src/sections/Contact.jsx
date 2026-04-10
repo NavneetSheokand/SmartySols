@@ -8,6 +8,7 @@ const Contact = () => {
     name: '',
     email: '',
     company: '',
+    phone: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,9 +24,9 @@ const Contact = () => {
   const handleSubmit = async (e) => {
   e.preventDefault();
   setIsSubmitting(true);
-
+// https://smartysols.onrender.com/api/contact
   try {
-    const response = await fetch("https://smartysols.onrender.com/api/contact", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,6 +42,7 @@ const Contact = () => {
         name: "",
         email: "",
         company: "",
+        phone: "",
         message: "",
       });
     } else {
@@ -170,6 +172,23 @@ const Contact = () => {
                     placeholder="john@company.com"
                   />
                 </div>
+
+                <div>
+  <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
+    Phone Number *
+  </label>
+
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    value={formData.phone}
+    onChange={handleChange}
+    required
+    className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+    placeholder="+91 9876543210"
+  />
+</div>
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-neutral-700 mb-2">

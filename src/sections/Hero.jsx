@@ -59,9 +59,8 @@ const Hero = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl lg:text-6xl xl:text-display-md font-display font-bold text-neutral-900 mb-6 leading-tight"
           >
-            We Build Scalable Apps,{' '}
-            <span className="gradient-text">High-Performance Websites</span>{' '}
-            & AI Automation Systems That Grow Your Business
+            Stop Wasting Hours on manual Work,{' '}
+            <span className="gradient-text">We Build AI Systems & Scalable Apps That Grow Your Business</span>{' '}
           </motion.h1>
 
           {/* Subheadline */}
@@ -69,8 +68,8 @@ const Hero = () => {
             variants={itemVariants}
             className="text-lg md:text-xl lg:text-2xl text-neutral-600 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            From React Native mobile apps to MERN stack platforms and AI-powered automation — 
-            SmartySols helps ambitious companies build faster, smarter, and more efficiently.
+            We help startups and growing businesses automate operations, generate leads, 
+and build high-performance apps using AI, React-Native Apps, MERN stack, and no-code automation.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -84,7 +83,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05, boxShadow: '0 20px 60px -15px rgba(69, 196, 176, 0.5)' }}
               whileTap={{ scale: 0.95 }}
             >
-              Book a Free Strategy Call
+              Start Automating Your Business →
             </motion.a>
             <motion.a
               href="#services"
@@ -92,7 +91,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              See Our Services
+              See How IT Works →
             </motion.a>
           </motion.div>
 
@@ -105,7 +104,7 @@ const Hero = () => {
               <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>Trusted by startups & growing businesses</span>
+              <span>Helped businesses automate 1000+ hours of manual work</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
