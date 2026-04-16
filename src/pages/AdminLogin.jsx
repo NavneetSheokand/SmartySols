@@ -15,7 +15,7 @@ const AdminLogin = () => {
       });
 
       const data = await res.json();
-      console.log("LOGIN RESPONSE:", data);
+      console.log("LOGIN RESPONSE:", data);console.log("FULL URL:", `${import.meta.env.VITE_API_URL}/api/auth/login`);
 
       if (data.token) {
         localStorage.setItem("token", data.token);
